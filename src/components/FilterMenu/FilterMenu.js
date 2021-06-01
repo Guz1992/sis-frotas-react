@@ -6,7 +6,7 @@ import FilterListIcon from '@material-ui/icons/FilterList';
 import Input from "../BasicTextFields/BasicTextFields";
 import "./estilo.css";
 
-export default function SimpleMenu() {
+export default function SimpleMenu(props) {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [textInput, setTextInput] = React.useState('Veiculo');
 
@@ -21,6 +21,7 @@ export default function SimpleMenu() {
   function handleGetValue(text){
       // console.log(text);
       setTextInput(text);
+      props.input(textInput);
       setAnchorEl(null);
   }
 
